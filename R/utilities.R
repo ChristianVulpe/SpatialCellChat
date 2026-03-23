@@ -508,7 +508,7 @@ my_as_sparse3Darray <- function (x, ... ,strict = FALSE, nonzero = FALSE)
         NULL
       else c(dnlist[[1L]], list(NULL))
 
-      # progressr::handlers(global = T)
+      progressr::handlers(global = T)
       progressr::handlers(progressr::handler_progress(format = ":percent [:bar] :eta :message"))
       X <- seq_len(n)
       p <- progressr::progressor(along = X)
@@ -586,7 +586,7 @@ my_future_sapply <- function(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE, fut
     cat(paste0(cli.symbol("info")," Future strategy in use: `",future.strategy,"`\n"))
   }
 
-  # progressr::handlers(global = T)
+  progressr::handlers(global = T)
   progressr::handlers(progressr::handler_progress(format = ":percent [:bar] :eta :message"))
   p <- progressr::progressor(along = X)
 
@@ -647,7 +647,7 @@ my_future_lapply <- function(X, FUN, ..., future.seed = T, simplify = F, hint.me
     cat(paste0(cli.symbol("info")," Future strategy in use: `",future.strategy,"`\n"))
   }
 
-  # progressr::handlers(global = T)
+  progressr::handlers(global = T)
   progressr::handlers(progressr::handler_progress(format = ":percent [:bar] :eta :message"))
   p <- progressr::progressor(along = X)
   res_ <- future.apply::future_lapply(
